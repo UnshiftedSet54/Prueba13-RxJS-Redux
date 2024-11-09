@@ -1,0 +1,26 @@
+<div class="container">
+  <ul>
+    @if(tasks.length >= 1){
+    @for(task of tasks; track $index){
+    <li>
+      <div class="task-content">
+        @if(task.status === 'realizado'){
+        <input type="checkbox" class="checkbox" id={{$index}} (change)="updateTask($event)" checked>
+        }@else{
+        <input type="checkbox" class="checkbox" id={{$index}} (change)="updateTask($event)">
+        }
+        <div>
+          <h3 class={{task.status}}>{{task.name}} ({{task.status}})</h3>
+          <p class={{task.status}}>{{task.description}}</p>
+        </div>
+      </div>
+      <div class={{task.status}} id={{$index}} (click)="deleteTask($event)">
+        <span class="del-icon">&minus;</span>
+      </div>
+    </li>
+    }
+    }@else{
+    <p>No hay tareas nuevas.</p>
+    }
+  </ul>
+</div>

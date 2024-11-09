@@ -1,0 +1,20 @@
+<div class="container">
+  <form [formGroup]="formTask" (ngSubmit)="addTask()">
+    <div class="form-section">
+      <h1>Nueva Tarea</h1>
+    </div>
+    <div class="form-section">
+      <div>
+        <label>Nombre</label>
+        <input type="text" class="input" formControlName="name" id="" required>
+      </div>
+      <div>
+        <label>Descripcion</label>
+        <input class="input" type="text" formControlName="description" required>
+      </div>
+    </div>
+    <div class="form-section">
+      <button>Ingresar</button>
+    </div>
+  </form>
+</div>
